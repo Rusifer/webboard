@@ -20,11 +20,24 @@ public class BoardController {
 	BoardService service;
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public void getList(Model model) throws Exception {
+	public void list(Model model) throws Exception {
 		List<BoardVO> list = null;
 		list = service.list();
 		
 		model.addAttribute("list", list);
 		
+	}
+	
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
+	public void write() throws Exception {
+		
+	}
+	
+	@RequestMapping(value = "/write", method = RequestMethod.POST)
+	public String write(BoardVO vo) throws Exception {
+		
+		service.write(vo);
+		
+		return "redirect:/board/list";
 	}
 }
