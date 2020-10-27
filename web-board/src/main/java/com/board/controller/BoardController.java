@@ -6,8 +6,10 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.domain.BoardVO;
 import com.board.service.BoardService;
@@ -39,5 +41,13 @@ public class BoardController {
 		service.write(vo);
 		
 		return "redirect:/board/list";
+	}
+	
+	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	public void view(@RequestParam("bno") int bno, Model model) throws Exception {
+		BoardVO vo = service.view(bno);
+		
+		model.addAttribute("view", vo);
+
 	}
 }

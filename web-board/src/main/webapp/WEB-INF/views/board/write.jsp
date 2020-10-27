@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시물 조회</title>
 </head>
 <body>
 <form method="post">
@@ -18,7 +18,7 @@
 <label>내용</label>
 <textarea cols="50" rows="5" name="content"></textarea><br />
 
-<button type="submit">작성</button>
+<!-- <button type="submit">작성</button> -->
 
 </body>
 </html>
