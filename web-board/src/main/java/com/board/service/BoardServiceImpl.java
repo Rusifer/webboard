@@ -32,4 +32,27 @@ public class BoardServiceImpl implements BoardService {
 		return dao.view(bno);
 	}
 
+	@Override
+	public void modify(BoardVO vo) throws Exception {
+		dao.modify(vo);
+		
+	}
+
+	@Override
+	public void delete(int bno) throws Exception {
+		dao.delete(bno);
+		
+	}
+
+	@Override
+	public int count() throws Exception {
+		return dao.count();
+	}
+
+	@Override
+	public List listPage(int displayPost, int postNum) throws Exception {
+		
+		return dao.listPage(displayPost, postNum);
+	}
+
 }
